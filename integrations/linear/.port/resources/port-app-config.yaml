@@ -45,7 +45,6 @@ resources:
             priority: .priorityLabel
             created: .createdAt
             updated: .updatedAt
-            newTestField: .testField
           relations:
             team: .team.key
             labels: .labelIds
