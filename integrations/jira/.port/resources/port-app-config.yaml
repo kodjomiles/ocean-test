@@ -75,3 +75,4 @@ resources:
             subtasks: .fields.subtasks | map(.key)
             assignee: .fields.assignee.accountId
             reporter: .fields.reporter.accountId
+            childIssues: .fields.subtasks | map(.key)
