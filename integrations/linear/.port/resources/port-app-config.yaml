@@ -49,3 +49,4 @@ resources:
             team: .team.key
             labels: .labelIds
             parentIssue: .parent.identifier
+            childLabels: .children.edges[].node.labelIds
