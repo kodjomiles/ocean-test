@@ -99,6 +99,7 @@ resources:
             version: .resourceVersion
             annotations: .liveState | fromjson | .metadata.annotations
             labels: .liveState | fromjson | .metadata.labels
+            childLabels: 'if .kind == "Deployment" then .liveState | fromjson | .spec.template.spec.containers[0].labels else null end'
           relations:
             application: .__application.metadata.uid
             image: 'if .kind == "Deployment" then .liveState | fromjson | .spec.template.spec.containers[0].image else null end'
