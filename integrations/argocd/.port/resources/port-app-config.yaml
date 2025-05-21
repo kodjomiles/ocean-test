@@ -84,7 +84,6 @@ resources:
             sourcePath: .item.source.path
           relations:
             application: .metadata.uid
-            iba: .iba_oooo
   - kind: managed-resource
     selector:
       query: "true"
