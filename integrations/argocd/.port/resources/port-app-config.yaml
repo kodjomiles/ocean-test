@@ -102,4 +102,3 @@ resources:
           relations:
             application: .__application.metadata.uid
             image: 'if .kind == "Deployment" then .liveState | fromjson | .spec.template.spec.containers[0].image else null end'
-            test: 'nothing'
