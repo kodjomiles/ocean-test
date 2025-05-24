@@ -74,5 +74,4 @@ resources:
             parentIssue: .fields.parent.key
             subtasks: .fields.subtasks | map(.key)
             assignee: .fields.assignee.accountId
-            reporter: .fields.reporter.accountId
-            important: .tester
+            reporter: .fields.reporter.accountId    
