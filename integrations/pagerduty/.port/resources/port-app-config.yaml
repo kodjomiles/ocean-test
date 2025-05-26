@@ -142,3 +142,4 @@ resources:
             job_title: .job_title
             teams: .teams
             contact_methods: .contact_methods
+            newProperty: .description
