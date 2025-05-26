@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'integrations/**/.port/resources/port-app-config.yaml'
+      - 'integrations/**/.port/resources/port-app-config.yml'
 
 jobs:
   trigger-sync:
@@ -22,11 +23,13 @@ jobs:
         with:
           files: |
             integrations/**/.port/resources/port-app-config.yaml
+            integrations/**/.port/resources/port-app-config.yml
 
       - name: Trigger docs sync
+        if: steps.changed-files.outputs.any_changed == 'true'
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.PORT_DOCS_SYNC_TOKEN }}
-          repository: ${{ github.repository_owner }}/port-docs-sync
+          repository: ${{ github.repository_owner }}/port-docs
           event-type: sync-docs
           client-payload: '{"repository": "${{ github.repository }}", "commit_url": "${{ github.event.head_commit.url }}", "changed_files": ${{ toJSON(steps.changed-files.outputs.all_changed_files) }}}' 
